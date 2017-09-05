@@ -1,28 +1,71 @@
 
-class ConsumerTransaction():
+class Transaction():
     def __init__(self, price = None):
-        selling_price = price
+        selling_price_org_ft = price
+        selling_price_org_conv = price
+        selling_price_reg_ft = price
+        selling_price_reg_conv = price
+        # Wholesale_org_ft === wholesale_reg_ft
+        wholesale_org_ft = price
+        wholesale_org_conv = price
+        wholesale_reg_conv = price
 
     @property
-    def selling_price(self):
-        return self.selling_price
+    def selling_price_org_ft(self):
+        return self.selling_price_org_ft
+
+    @selling_price_org_ft.setter
+    def selling_price_org_ft(self, price)
+        self.selling_price_org_ft = price
+    @property
+    def selling_price_org_conv(self):
+        return self.selling_price_org_conv
 
     @selling_price.setter
-    def selling_price(self, price)
-        self.selling_price
-
-class WholsaleTransaction():
-    def __init__(self, price = None):
-        wholesale_price = price
+    def selling_price_org_conv(self, price)
+        self.selling_price_org_conv = price
 
     @property
-    def wholesale_price(self):
-        return self.wholesale_price_price
+    def selling_price_reg_ft(self):
+        return self.selling_price_reg_ft
 
-    @selling_price.setter
-    def selling_price(self, price)
-        self.wholesale_price
+    @selling_price_reg_ft.setter
+    def selling_price_reg_ft(self, price)
+        self.selling_price_reg_ft = price
 
+    @property
+    def selling_price_reg_conv(self):
+        return self.selling_price_reg_conv
+
+    @selling_price_reg_conv.setter
+    def selling_price_reg_conv(self, price)
+        self.selling_price_reg_conv = price
+
+    @property
+    def wholesale_org_ft(self):
+        return self.wholesale_org_ft
+
+    @wholesale_org_ft.setter
+    def wholesale_org_ft(self, price)
+        self.wholesale_org_ft = price
+
+    @property
+    def wholesale_org_conv(self):
+        return self.wholesale_org_conv
+
+    @wholesale_org_conv.setter
+    def wholesale_org_conv(self, price)
+        self.wholesale_org_conv = price
+
+    @property
+    def wholesale_reg_conv(self):
+        return self.wholesale_reg_conv
+
+    @wholesale_reg_conv.setter
+    def wholesale_reg_conv(self, price)
+        self.wholesale_reg_conv = price
+
+    cost_of_effort = Farmer.costEffort(Org)
 
 
 class Retailer():
@@ -53,7 +96,6 @@ class Retailer():
 
     @classmethod
     def compute_profitOrgConv(cls, self, price, unitsConsumersDemand, unitsFarmerProduced, wholesalePrice):
-        price = price
         revenue = price * (min(unitsConsumersDemand, unitsFarmerProduced))
         cost = wholesalePrice * unitsFarmerProduced
         profit = revenue - cost
@@ -92,6 +134,12 @@ class Farmer():
         profitOrgConv = profitOrgConv
         profitRegFT = profitRegFT
         profitRegConv =  profitRegConv
+
+    def profit(self, type):
+        if type == OrgFT
+        else if type == OrgConv
+        else if type == RegFT
+        else if type == RegConv
 
     @property
     def profitOrgFT(self):
@@ -178,3 +226,9 @@ class GUI()
     # Graph of how consumer demand ffects
 
     # Graph how consumers utility changes over different s
+
+If you the retailer choose FT, let farmer choose wholeSale price
+If you choose Conv, the market chooses wholeSale price (set the market with a slider to see what happens as market changes)
+Visualize with a graph of how profit changes as the wholesale price changes
+
+Farmer chooses cost of effort
