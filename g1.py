@@ -1,4 +1,67 @@
 
+
+class GameScript():
+    def __init__(self):
+        self.retail_price = None
+        self.wholesale_price = None
+        self.quantity_demanded = None
+        self.quantity_produced = None
+        self.cost_of_effort = None
+
+        self.retail_price_org_FT = None
+        self.retail_price_org_conv = None
+        self.retail_price_reg_FT = None
+        self.retail_price_reg_conv = None
+
+        self.wholesale_price_FT = None
+        self.wholesale_price_org_conv = None
+        self.wholesale_price_reg_conv = None
+
+        self.quantity_produced_org = None
+        self.quantity_produced_reg_FT = None
+        self.quantity_produced_reg_conv = None
+
+        self.quantity_demanded_org_FT = None
+        self.quantity_demanded_org_conv = None
+        self.quantity_demanded_reg_FT = None
+        self.quantity_demanded_reg_conv = None
+
+        self.cost_of_effort_org = None
+        self.cost_of_effort_reg = None
+
+    def input_cases(self, trade="Conv", material="Reg"):
+        if (trade == "FT"):
+            self.wholesale_price = self.wholesale_price_FT
+            if (material == "Org"):
+                self.retail_price = self.retail_price_org_FT
+                self.quantity_produced = self.quantity_produced_org
+                self.quantity_demanded = self.quantity_demanded_org_FT
+                self.cost_of_effort = self.cost_of_effort_org
+            else if (material == "Reg"):
+                self.retail_price = self.retail_price_reg_FT
+                self.quantity_produced = self.quantity_produced_reg_FT
+                self.quantity_demanded = self.quantity_demanded_reg_FT
+                self.cost_of_effort = self.cost_of_effort_reg
+
+        else if (trade == "Conv"):
+            if (material == "Org"):
+                self.retail_price = self.retail_price_org_conv
+                self.wholesale_price = self.wholesale_price_org_conv
+                self.quantity_produced = self.quantity_produced_org
+                self.quantity_demanded = self.quantity_demanded_org_conv
+                self.cost_of_effort = self.cost_of_effort_org
+            else if (material == "Reg"):
+                self.retail_price = self.retail_price_reg_conv
+                self.wholesale_price = self.wholesale_price_reg_conv
+                self.quantity_produced = self.quantity_produced_reg_conv
+                self.quantity_demanded = self.quantity_demanded_reg_conv
+                self.cost_of_effort = self.cost_of_effort_reg
+
+        farmer_profit = (self.wholesale_price * self.quantity_produced) - self.cost_of_effort
+        retailer_profit = (self.retail_price * min(self.quantity_produced, self.quantity_demanded)) - (self.wholesale_price * self.quantity_produced)
+
+
+
 class Transaction():
     def __init__(self, price = None):
         selling_price_org_ft = price
