@@ -57,8 +57,27 @@ class GameScript():
                 self.quantity_demanded = self.quantity_demanded_reg_conv
                 self.cost_of_effort = self.cost_of_effort_reg
 
+    def farmer_profit(self, wholesale_price, quantity_produced, cost_of_effort):
         farmer_profit = (self.wholesale_price * self.quantity_produced) - self.cost_of_effort
+
+
+    def retailer_profit(self, retail_price, wholesale_price, quantity_demanded, quantity_produced):
         retailer_profit = (self.retail_price * min(self.quantity_produced, self.quantity_demanded)) - (self.wholesale_price * self.quantity_produced)
+
+    def main(self):
+        # Retailer, trying to maximuze profit using backwards induction, chooses to go FT or Conv
+        # If Conv, retailer chooses wg (marginal wholesale price for cotton)
+        # If FT, farmer chooses w (wholesale price to retailer)
+        # Farmer, trying to maximize profit, chooses a BR - Org or Reg
+        # If farmer choses Org, farmer chooses optimal e for production
+        # Retailer choose a retail_price
+        # How does farmer's choice of effort affect the retail decision?
+        #
+        #
+        #
+        #
+
+
 
 
 

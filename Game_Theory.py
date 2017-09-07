@@ -1,19 +1,2 @@
-
-price_FT_Conv
-price_FT_Org
-price_N_Conv
-price_N_Org
-
-Demand_Conv
-Demand_Org
-
-Profit_farm_FT_Conv
-Profit_farm_FT_Org
-Profit_farm_N_Conv
-Profit_farm_N_Org
-
-
-Profit_Retailer_FT_Conv
-Profit_Retailer_FT_Org
-Profit_Retailer_N_Conv
-Profit_Retailer_N_Org
+import gambit
+g = gambit.
